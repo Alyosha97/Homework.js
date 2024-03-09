@@ -1,0 +1,322 @@
+1.// Petq e stexcel funkcia vory kstugi, ardyoq tvi tvanshaneri gumary bajanvume 5-i te voch(true/false)
+
+function func(num) {
+  let sum = 0;
+
+  while(num !== 0) {
+    let lastDigit = num % 10;
+    sum += lastDigit;
+    num = (num - lastDigit) / 10
+  }
+
+  if(sum % 5 === 0) {
+    return true
+  }
+  return false
+}
+
+
+console.log(func(3458))
+
+
+
+
+2.// Unenal funkcia vory stanalov mek obyekt argumentum` vorpes ardyunq veradardznum e 2 hat zangvac: Meky kazmvac ayd obyekti "key"-ic, myusy "value"-ic:
+
+
+function func(user) {
+  
+  let map  = new Map(Object.entries(user))
+  let arr = [];
+  let clone = [];
+
+  for(let value of map.keys()) {
+      arr.push((value));
+  }
+  
+  for(let key of map.values()) {
+      clone.push((key));
+  }
+  console.log(arr,clone)
+  
+}
+
+console.log(func({a:1,b:2}))
+
+
+
+
+3.// Stexcel funkcia, vory stanum e 2 argument, zangvac ev tip ev veradardznum e true ete poxancvac zangvaci bolor elementnery hamapatasxanum en ayd tipin, hakarak depqum false
+
+
+const equivalent = (arr, type) => arr.every((elem) => typeof elem === type)
+
+
+console.log(equivalent([1,2,3],'number'))
+
+
+
+
+4.// Stexcel zangvac lcvac latinakan aybubeni (a-z) poqratarerov
+
+let arr2 = [];
+
+for (let i = 97; i <= 122; i++) {
+  arr2.push(String.fromCodePoint(i));
+}
+console.log(arr)
+
+
+
+
+5.// Stexcel funkcia, vory stanum e kamayakan tvov argumentner,gcum e dranq mek zangvaci mej ev veradardznum e ayd zangvacy
+
+const func = (...args) => new Array(...args);
+  
+console.log(func())
+
+
+
+6.// Shrjel bary aranc vorevice metod ogtagorcelu
+
+function reverse(str) {
+   let result = ''
+ 
+   for(let i = str.length -1; i >= 0; i--){
+      result = result + str[i]
+   }
+     return result
+}
+
+console.log(reverse('surname'))
+
+
+
+
+7.// Unenal funkcia, vory kartaci argumentov poxancac naxadasutyan miayn ayn barery, voronc erkarutyuny mec e 6-ic
+
+function func(str) {
+  let arr = str.split(' ');
+  let result = [];
+
+  for(let elem of arr) {
+
+    if(elem.length > 6){
+      result.push(elem)
+    }
+  }
+
+  return result.join(',')
+}
+
+console.log(func())
+
+
+
+
+8.// Unenq tvayin zangvac: Stexcel funkcia ev stugel, ete zangvacum ka vorevice mek tiv vory parunakum e 6 tvanashany veradardznel 'invalid array' artahaitutyuny, hakarak depqum 'array is normal'
+
+
+function func(arr) {
+  
+  for(let elem of arr){
+     if(elem === 6) {
+       return 'invalid array'
+     } 
+  }
+  return 'array is normal'
+}
+  
+
+console.log(func([1,2,3,5,6]))
+
+
+
+
+9.// Grel kod, vory tpum e 1-20 tvery consolum hakarak hajordakanutyamb ev 1v. yndmijumnerov
+
+
+let n = 20;
+
+const s = setInterval(() => {
+  console.log(n)
+  n--
+  if(n === 0){
+    clearInterval(s)
+  }
+}, 1000)
+
+
+
+
+10.// Azatvel zangvaci krknvox elementneric
+
+const unique = (arr) => arr.filter((elem,index) => arr.indexOf(elem) === index)
+
+console.log(unique([1,2,3,3,4,5,6,6,true,true]))
+
+
+
+
+11.// Obekti mej bolor tvayin arjeqnery bardzracnel xoranard ev artacel consolum
+
+const user = {
+  name:'John',
+  age: 25,
+  number: 6,
+  street: 11
+}
+
+for(let key in user) {
+  if(typeof user[key] === 'number') {
+    console.log(Math.pow(user[key], 3))
+  }
+}
+
+
+
+12.// Unenal tverov zangvac, mejy linen nayev bacasakan tver, pordzel maqrel zangvacy bacasakan tveric
+
+const arr1 = [1,2,-4,5,6,-7,-25]
+
+let result = arr1.filter((elem) => elem > 0)
+console.log(result)
+
+
+
+
+13.// Trvac e naxadasutyun gtnel ayd naxadasutyan meji amenaerkar bary
+
+let str = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+
+const arr = str.split(' ').sort((a,b) => b.length - a.length)
+console.log(arr[0])
+
+
+
+
+14.// Unenal funkcia, vory stanum e kamayakan zangvac, ev hashvum e ayd zangvacum bolor elementneri handipumneri qanaky
+
+
+function count(arr) {
+  
+  return arr.reduce((result,elem) => {
+     if(result.hasOwnProperty(elem)){
+       result[elem]++
+     }else {
+       result[elem] = 1
+     }
+     return result
+  },{})
+}
+
+console.log(count([1,2,1,3,4,5,4,true,true]))
+
+
+
+
+15.// Stexcel tverov zangvac, pordzel stanal ayd zangvacum gtnvox harakic zuyg elementneri gumary
+
+const clone = [1,2,3,4,5,4,6,8]
+
+let sum = 0;
+
+for(let i = 0; i < clone.length; i++) {
+  if(clone[i] % 2 === 0){
+      sum += clone[i]
+  }
+}
+
+console.log(sum)
+
+
+
+
+16.// Trvac e naxadasutyun artacel naxadasutyan mej nerarvac bareri qanaky, artacel naxadasutyan mej ogtagorcac tarery mek zangvaci mej, aranc krknutyunneri
+
+
+function func(str) {
+  let result = str.toLowerCase().split('')
+
+  return  result.filter((elem,index) => {
+    return result.indexOf(elem) === index
+  })
+
+}
+
+console.log(func('Anna'))
+
+
+
+
+17.// Gtnel naxadasutyan mej polindrom barery ev artacel consolum
+
+function isPalindrom(str) {
+  const arr = str.split(' ')
+
+return arr.forEach(elem => {
+   if (elem.split('').join('') === elem.split('').reverse().join('')) {
+       console.log(elem);
+   }
+ })
+}
+
+
+console.log(isPalindrom())
+
+
+
+
+18.// Stexcel funkcia, vory hashvum e texti yurakanchyur tari handipumneri qanaky
+
+function count(str) {
+  let arr = str.split('')
+  
+  return arr.reduce((result,elem) => {
+     if(result.hasOwnProperty(elem)){
+       result[elem]++
+     } else {
+      result[elem] = 1
+     } 
+     return result
+  },{})
+}
+
+console.log(count())
+
+
+
+
+19.// Unenal obyekt xary tvyalnerov, ayd obyekti bolor 'number' tipi arjeq parunakox 'key'-y jnjel hanel ayd obyektic ev pahpanel mek ayl obyekti mej, avartin artacel ayd 2 obyektnery consolum
+
+
+const obj = {
+  name: 'John',
+  surname: 'Doe',
+  age:25,
+  street: 14,
+  number: 56789
+}
+
+let numbers = {};
+
+for(let key in obj) {
+  if(typeof obj[key] === 'number'){
+    numbers[key] = obj[key]
+    delete obj[key]
+  }
+}
+
+console.log(obj,numbers)
+
+
+
+
+20.// Unenq zangvac, vori mek 'index' datark e - 'empty', gtnel ayd index-y
+
+let x = [1,2,3,,4,5,6]
+
+let word = x.toString()
+
+console.log(x.indexOf(word.match(/d\g/)))
+
